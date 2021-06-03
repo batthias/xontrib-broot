@@ -9,7 +9,7 @@ def _br(args, stdin, stdout, stderr):
 
     try:
         subprocess.call(
-            ["broot", "--outcmd", cmd_file.name] + list(args),
+            ["broot", "--outcmd", cmd_file.name] + ["--color=yes"] + list(args),
             stdin=stdin, stderr=stderr, stdout=stdout,
         )
         builtins.evalx(cmd_file.read().decode())
